@@ -1,60 +1,40 @@
-// Array to store login credentials
-const loginCredentials = [];
-
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
-
-    // Get username and password values
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    // Store credentials in the array
-    loginCredentials.push({ username, password });
-
-    // Print the array to the console
-    console.log('Stored Login Credentials:', loginCredentials);
-
-    // Change the background to the new GIF
-    const background = document.querySelector('.background');
-    background.style.backgroundImage = "url('Assets/LoginBackGround.gif')";
-
-    // Optional: Add a delay or redirect after login
-    setTimeout(() => {
-        alert('Login successful!'); // Replace this with your desired action
-    }, 1000);
-});
-
-// Function to update the clock
+// Live Clock
 function updateClock() {
+    const clockElement = document.getElementById('live-clock');
     const now = new Date();
+
+    // Format time as HH:MM:SS
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    const clock = document.getElementById('clock');
-    clock.textContent = `${hours}:${minutes}:${seconds}`;
+
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    clockElement.textContent = timeString;
 }
 
-// Update the clock every second
+// Update clock every second
 setInterval(updateClock, 1000);
+updateClock(); // Initialize immediately
 
-// Initialize the clock immediately
-updateClock();
+// Login Functionality
+document.getElementById('loginImage').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default action
 
-// Function to toggle login UI visibility
-function toggleLoginUI() {
-    const loginContainer = document.getElementById('loginContainer');
-    if (loginContainer.style.display === 'none') {
-        // Show login UI
-        loginContainer.style.display = 'block';
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === "admin" && password === "admin") {
+        // Redirect to table.html
+        window.location.href = "table.html";
     } else {
-        // Hide login UI
-        loginContainer.style.display = 'none';
+        alert("Invalid username or password. Please try again.");
     }
-}
+});
 
-// Add event listener for the 'H' key
+// Hide/Show Login Container on 'H' Key Press
 document.addEventListener('keydown', function(event) {
     if (event.key === 'h' || event.key === 'H') {
-        toggleLoginUI();
+        const loginContainer = document.querySelector('.login-container');
+        loginContainer.style.display = loginContainer.style.display === 'none' ? 'block' : 'none';
     }
 });
