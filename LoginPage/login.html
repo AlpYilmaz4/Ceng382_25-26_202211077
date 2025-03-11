@@ -1,31 +1,34 @@
 <!-- So i need like We have a BackGround.jpg for image Logo.jpeg for login button Logo_2.gif for top left corner And Raven.gif For right bottom corner 
- And when the user clicks at login image(button) it changes background to LoginBackGround.gif
- -->
+ And when the user clicks at login image(button) it changes background to LoginBackGround.gif -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="Styles/style.css">
-</head>
-<body>
-    <div class="background"></div>
-    <img src="Assets/Logo_2.gif" alt="Logo" class="top-left-logo">
-    <img src="Assets/Raven.gif" alt="Raven" class="bottom-right-raven">
-    <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit"><img src="Assets/Logo.jpeg" alt="Login Button"></button>
-        </form>
-    </div>
-    <script src="Scripts/script.js"></script>
-</body>
-</html>
+ <!-- Using JavaScript, modify the login screen so that when a user attempts to log in and clicks the login button, their username and password are stored in an 
+array in the background. Then, print all elements of this array to the console can u add live clock at login ui and when h press ui of login container dissapears -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login Page</title>
+     <link rel="stylesheet" href="Styles/style.css">
+ </head>
+ <body>
+     <div class="background"></div>
+     <img src="Assets/Logo_2.gif" alt="Logo" class="top-left-logo">
+     <img src="Assets/Raven.gif" alt="Raven" class="bottom-right-raven">
+     <div class="login-container" id="loginContainer">
+         <div class="clock" id="clock"></div>
+         <h1>Login</h1>
+         <form id="loginForm">
+             <label for="username">Username:</label>
+             <input type="text" id="username" name="username" required>
+             
+             <label for="password">Password:</label>
+             <input type="password" id="password" name="password" required>
+             
+             <button type="submit"><img src="Assets/Logo.jpeg" alt="Login Button"></button>
+         </form>
+     </div>
+     <script src="Scripts/script.js"></script>
+ </body>
+ </html>

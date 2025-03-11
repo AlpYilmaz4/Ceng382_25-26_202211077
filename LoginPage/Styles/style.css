@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden;
 }
 
 .background {
@@ -23,7 +23,7 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -52,7 +52,7 @@ body, html {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    box-sizing: border-box;
 }
 
 .login-container button {
@@ -68,7 +68,7 @@ body, html {
 .login-container button img {
     width: 100%;
     height: auto;
-    border-radius: 5px; /* Match button border-radius */
+    border-radius: 5px;
 }
 
 .top-left-logo {
@@ -85,4 +85,11 @@ body, html {
     right: 20px;
     width: 120px;
     height: auto;
+}
+
+.clock {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
 }
