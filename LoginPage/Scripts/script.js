@@ -24,8 +24,14 @@ document.getElementById('loginImage').addEventListener('click', function(event) 
     const password = document.getElementById('password').value;
 
     if (username === "admin" && password === "admin") {
-        // Redirect to table.html
-        window.location.href = "table.html";
+        // Change the background to LoginBackGround.gif
+        const background = document.getElementById('login-background');
+        background.style.backgroundImage = "url('Assets/LoginBackGround.gif')";
+
+        // Redirect to table.html after a short delay
+        setTimeout(() => {
+            window.location.href = "table.html";
+        }, 2000); // 2-second delay for the transition
     } else {
         alert("Invalid username or password. Please try again.");
     }

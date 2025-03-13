@@ -1,7 +1,7 @@
 // Array to store class data
 const classData = [];
 
-// Form Submission
+// Form submission
 document.getElementById('classForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
 
@@ -13,14 +13,14 @@ document.getElementById('classForm').addEventListener('submit', function(event) 
     // Add data to array
     classData.push({ className, numPeople, description });
 
-    // Update table
+    // Update the table
     updateTable();
 
-    // Clear form
+    // Clear the form
     event.target.reset();
 });
 
-// Update Table Function
+// Function to update the table
 function updateTable() {
     const tbody = document.querySelector('#classTable tbody');
     tbody.innerHTML = ''; // Clear existing rows
@@ -34,10 +34,26 @@ function updateTable() {
             <td>${data.description}</td>
         `;
 
-        // Click event to highlight row
+        // Click Event: Highlight row
         row.addEventListener('click', () => {
             console.log('Row clicked:', data);
             row.classList.toggle('highlight');
+        });
+
+        // Double-Click Event: Delete row
+        row.addEventListener('dblclick', () => {
+            classData.splice(index, 1); // Remove the row from the array
+            updateTable(); // Update the table
+        });
+
+        // Mouseover Event: Highlight row on hover
+        row.addEventListener('mouseover', () => {
+            row.style.backgroundColor = '#f0f0f0'; // Light gray background
+        });
+
+        // Mouseout Event: Reset row background color
+        row.addEventListener('mouseout', () => {
+            row.style.backgroundColor = ''; // Reset background
         });
 
         tbody.appendChild(row);
@@ -53,17 +69,4 @@ document.querySelectorAll('#classForm input, #classForm textarea').forEach(input
     input.addEventListener('blur', () => {
         input.style.backgroundColor = ''; // Reset background
     });
-});
-
-// Mouseover and Mouseout Events for Table Rows
-document.getElementById('classTable').addEventListener('mouseover', (event) => {
-    if (event.target.tagName === 'TD') {
-        event.target.parentElement.style.backgroundColor = '#f0f0f0'; // Light gray background
-    }
-});
-
-document.getElementById('classTable').addEventListener('mouseout', (event) => {
-    if (event.target.tagName === 'TD') {
-        event.target.parentElement.style.backgroundColor = ''; // Reset background
-    }
 });
