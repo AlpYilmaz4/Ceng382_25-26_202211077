@@ -1,3 +1,5 @@
+//open a new razor page model dont use js and css just c# and razor page and make he page like this pdf
+
 using System.ComponentModel.DataAnnotations;
 
 namespace ClassInformationSystem.Models
